@@ -1,0 +1,8 @@
+{
+  "name": "msFinance",
+  "app_id": "f6d1b126",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}

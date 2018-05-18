@@ -1,0 +1,145 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank First home page update
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tab" >
+      <ion-segment-button value="ausind">
+        <ion-icon name="Ausndex">Aus Ind</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="sbi" >
+        <ion-icon name="SBI">SBI</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="finance">
+        <ion-icon name="Finance">Finance</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="moodys">
+        <ion-icon name="moodys">Moodys</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="snp">
+        <ion-icon name="SnP">S&P</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="capitalone">
+        <ion-icon name="capOne">Capital One</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="ratings">
+        <ion-icon name="Ratings">Ratings</ion-icon>
+      </ion-segment-button>
+      <ion-segment-button value="change">
+        <ion-icon name="change">Change</ion-icon>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+<div [ngSwitch]="tab" >
+  <ion-list [ngSwitchWhen]="ausind" ngSelected="selected">
+    <a ion-item>
+      <ion-label>book list</ion-label>
+    </a>
+  </ion-list>
+  <ion-list [ngSwitchWhen]="sbi">
+    <a ion-item>
+      <ion-label>table list</ion-label>
+    </a>
+  </ion-list>
+</div>
+
+</ion-content>
+-->
+
+
+
+<ion-header>
+  <ion-navbar no-border-bottom>
+    <ion-title>
+      Finance
+    </ion-title>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="ausind" (ionSelect)="selectedFriends('ausind')">
+        Aust Index
+      </ion-segment-button>
+      <ion-segment-button value="sbi" (ionSelect)="selectedFriends('sbi')">
+        SBI
+      </ion-segment-button>
+      <ion-segment-button value="snp" (ionSelect)="selectedFriends('snp')">
+        S & P
+      </ion-segment-button>
+      <ion-segment-button value="moody" (ionSelect)="selectedFriends('moody')">
+        Moody's
+      </ion-segment-button>
+      <ion-segment-button value="finance" (ionSelect)="selectedFriends('finance')">
+        Finance
+      </ion-segment-button>
+      <ion-segment-button value="change" (ionSelect)="selectedFriends('change')">
+        Change
+      </ion-segment-button>
+      <ion-segment-button value="add" (ionSelect)="selectedFriends('add')">
+        Add
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div [ngSwitch]="tab">
+    <ion-list *ngSwitchCase="'ausind'">
+      <ion-item>
+        <div [chart] ="chart">
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase ="'sbi'">
+      <ion-item>
+        <div [chart] ="chart1">
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'moody'">
+      <ion-item>
+        <div [chart] ="chart2">
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'snp'">
+      <ion-item>
+        <div [chart] ="chart4">
+
+        </div>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'finance'">
+      <ion-item>
+       Finance content here
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'change'">
+      <ion-item>
+        Change in % content here
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'add'">
+      <ion-item>
+         Add content here
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
